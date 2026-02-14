@@ -1,0 +1,182 @@
+🚀 Git Basics Cheat Sheet
+
+A simple and clean reference for commonly used Git commands.
+
+🏁 1. Initialize & Setup
+📦 git init
+
+Initializes the current folder as a Git repository.
+Creates a hidden .git folder which means Git has started tracking the project.
+
+👤 git config --global user.name "Your Name"
+📧 git config --global user.email "your@email.com"
+
+Sets your name and email for commits.
+✔️ One-time setup (global configuration).
+
+To verify:
+
+git config --list
+
+📥 git clone -b develop <repository-url>
+
+Clones a specific branch (develop) from a remote repository.
+
+Example:
+
+git clone -b develop https://github.com/user/repo.git
+
+🔍 2. Checking Changes
+📄 git status
+
+Shows:
+
+Modified files
+
+Staged files
+
+Untracked files
+
+🔎 git diff
+
+Shows changes made but NOT added to staging area.
+
+📊 git diff --stat
+
+Shows summary of changes:
+
+1 file changed, 2 insertions(+), 1 deletion(-)
+
+📌 git diff --staged
+
+Shows changes that are staged and ready to commit.
+
+➕ 3. Staging Files
+📂 git add .
+
+Adds ALL modified files to staging.
+
+📄 git add <file-name>
+
+Adds a specific file to staging.
+
+💾 4. Committing Changes
+📝 git commit -m "Your message"
+
+Creates a commit (snapshot of your staged changes).
+
+✏️ git commit --amend
+
+Modifies the last commit:
+
+Add missed files
+
+Edit commit message
+
+⚠️ Only safe before pushing.
+
+Verify using:
+
+git log
+
+📜 5. Viewing History
+🕒 git log
+
+Shows full commit history.
+
+🧾 git log --oneline
+
+Compact version of commit history.
+
+🌳 git log --graph
+
+Shows commits in a visual tree format.
+
+🌿 6. Branching
+🌱 git branch <branch-name>
+
+Creates a new branch.
+
+📋 git branch
+
+Lists all branches and highlights the current one.
+
+🔄 git checkout <branch-name>
+
+Switches to another branch.
+
+✨ (New & Recommended) git switch <branch-name>
+
+Modern alternative to git checkout for switching branches.
+
+🌿➡️🌿 git merge <branch-name>
+
+Merges another branch into the current branch.
+
+✔️ Always switch to the branch where you want the code merged before running this.
+
+🌍 7. Working with Remote Repositories
+🔗 git remote add origin <repository-url>
+
+Links your local repository to a remote GitHub repository.
+
+📤 git push -u origin <branch-name>
+
+Pushes your branch to GitHub.
+
+-u sets upstream (so future pushes can use just git push)
+
+📥 git pull
+
+Fetches and merges changes from remote repository.
+
+📡 git fetch
+
+Fetches changes from remote WITHOUT merging.
+
+🚫 8. Ignoring Files
+📄 .gitignore
+
+Contains list of files/folders Git should NOT track.
+
+Example:
+
+node_modules/
+*.log
+.env
+
+🔁 9. Undoing Changes
+❌ Unstage a file
+git restore --staged <file-name>
+
+🔙 Discard local changes
+git restore <file-name>
+
+⏮️ Reset to previous commit (soft)
+git reset --soft HEAD~1
+
+
+Keeps changes staged.
+
+⏮️ Reset to previous commit (hard)
+git reset --hard HEAD~1
+
+
+⚠️ Deletes changes permanently.
+
+🧹 10. Deleting Branches
+🗑️ Delete local branch
+git branch -d <branch-name>
+
+🗑️ Delete remote branch
+git push origin --delete <branch-name>
+
+💡 Pro Tips
+
+Always git pull before starting work.
+
+Commit small logical changes.
+
+Write meaningful commit messages.
+
+Use feature branches for development.
